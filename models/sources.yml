@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: titles_data
+    dataset: RawData
+    tables:
+      - name: TitlesRaw
+      - name: raw_titles
+        columns: 
+          - name: Title_ID
+            tests:
+              - unique
+              - not_null
+          - name: Date 
+            tests:
+              - unique
+              - not_null    
+          - name: Surface
+            tests: 
+              - accepted_values: 
+                  values: ['Clay', 'Grass', 'Hard', 'Indoor'] 
+          - name: ATP_Level
+            tests:
+              - accepted_values:
+                  values: ['Grand Slam', 'Olympics', 'Finals', '1000', '500', '250', '125']
