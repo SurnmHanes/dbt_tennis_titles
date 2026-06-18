@@ -1,17 +1,17 @@
-with base as (
+WITH base AS (
     
-    select distinct 
+    SELECT DISTINCT 
         Final_Opponent
-    from 
+    FROM 
         {{ ref ('stg_djokovic_titles') }}
 ),
 
-final as (
-    select 
+final AS (
+    SELECT 
         farm_fingerprint(Final_Opponent) as opponent_key,
         Final_Opponent
-    from 
+    FROM 
         base
 )
 
-select * from final
+SELECT * FROM final

@@ -1,17 +1,17 @@
-with base as (
+WITH base AS (
     
-    select distinct 
+    SELECT DISTINCT 
         Surface
-    from 
+    FROM 
         {{ ref ('stg_djokovic_titles') }}
 ),
 
-final as (
-    select 
+final AS (
+    SELECT 
         farm_fingerprint(surface) as surface_key,
         Surface 
-    from 
+    FROM 
         base
 )
 
-select * from final
+SELECT * FROM final

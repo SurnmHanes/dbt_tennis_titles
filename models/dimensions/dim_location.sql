@@ -1,19 +1,19 @@
-with base as (
+WITH base AS (
     
-    select distinct 
+    SELECT DISTINCT 
         Location,
         Country
-    from 
+    FROM 
         {{ ref ('stg_djokovic_titles') }}
 ),
 
-final as (
-    select 
-        farm_fingerprint(Location) as location_key,
+final AS (
+    SELECT 
+        farm_fingerprint(Location) AS location_key,
         Location,
         Country
-    from 
+    FROM 
         base
 )
 
-select * from final
+SELECT * FROM final

@@ -1,4 +1,4 @@
-select
+SELECT
     Title_ID,
     Date,
     Tournament,
@@ -9,4 +9,4 @@ select
     Final_Opponent,
     Ranking,
     Opponent_Ranking
-from {{ source('titles_data', 'raw_titles') }}
+FROM {{ source('titles_data', 'raw_titles') }}
