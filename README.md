@@ -59,3 +59,15 @@ Built in Google Sheets a curated dataset of all 101 professional titles won by N
 - Joins to all dimensions via keys
 - Represents title-level grain
 
+### Data Quality & Testing
+
+- Not null constraints on source identifiers (Title ID, Date)
+- Uniqueness tests on source identifiers
+- Accepted values tests for categorical fields (surface, ATP level)
+
+### Key Engineering Decisions
+
+1. Use of dbt for modular transformations.
+2. Separation of ingestion into warehouse (currently manual as reasonably static dataset) from external table.
+3. Separation of staging, dimensions and fact layers.
+4. Use of deterministic surrogate keys (so farm_fingerprint rather than row_number).
