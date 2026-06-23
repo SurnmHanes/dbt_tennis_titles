@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_djokovic_titles
+    columns: 
+      - name: Title_ID
+        tests: 
+          - not_null
+          - unique
+
+      - name: Date
+        tests: 
+          - not_null
+          - unique
+
+      - name: ATP_Level
+        tests: 
+          - not_null
+
+      - name: Final_Opponent
+        tests: 
+          - not_null
+
+      - name: Surface
+        tests:
+          - accepted_values:
+              values: ['Clay', 'Grass', 'Hard', 'Indoor']

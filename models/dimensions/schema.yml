@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: dim_location
+    columns: 
+      - name: location_key
+        tests: 
+          - not_null
+          - unique
+      
+      - name: location
+        tests: 
+          - not_null
+
+  - name: dim_surface
+    columns: 
+      - name: surface_key
+        tests: 
+          - not_null
+          - unique
+
+      - name: Surface
+        tests: 
+          - not_null
+
+  - name: dim_opponent
+    columns: 
+      - name: opponent_key
+        tests:
+          - not_null
+          - unique
+
+      - name: Final_Opponent
+        tests: 
+          - not_null
+
+  - name: dim_atp_level
+    columns: 
+      - name: atp_level_key
+        tests: 
+          - not_null
+          - unique
+
+      - name: atp_level_raw
+        tests:
+          - not_null
+
+  - name: dim_tournament
+    columns: 
+      - name: tournament_key
+        tests: 
+          - not_null
+          - unique
+
+      - name: Tournament
+        tests:
+          - not_null
+
+  
