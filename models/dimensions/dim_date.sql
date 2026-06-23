@@ -12,7 +12,8 @@ WITH date_base AS (
 
 )
 SELECT
-    date_day AS date_key,
+    CAST(FORMAT_DATE('%Y%m%d', date_day ) AS INT64) AS date_key,
+    date_day,
     EXTRACT(YEAR FROM date_day) AS YEAR,
     EXTRACT(MONTH FROM date_day) AS MONTH,
     FORMAT_DATE('%B', date_day) AS month_name,

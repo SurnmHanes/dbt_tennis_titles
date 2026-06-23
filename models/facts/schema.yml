@@ -3,6 +3,7 @@ version: 2
 models:
   
   - name: fact_titles
+    description: "fact table containing all the titles from the Djokovic titles dataset"
     columns: 
 
       - name: Title_ID

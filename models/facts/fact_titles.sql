@@ -10,7 +10,7 @@ SELECT
     stg.Opponent_Ranking
 FROM {{ ref ('stg_djokovic_titles')}} AS stg
 INNER JOIN {{ ref('dim_date') }} AS d
-    ON d.date_key = stg.date
+    ON d.date_day = stg.date
 LEFT JOIN {{ ref('dim_tournament') }} AS t
     ON stg.Tournament = t.Tournament
 LEFT JOIN {{ ref('dim_location') }} AS l

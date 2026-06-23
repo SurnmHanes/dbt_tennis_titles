@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: dim_location
+    description: "dimension describing different city and country pairs where tournaments held in Djookovic titles dataset."
     columns: 
       - name: location_key
         tests: 
@@ -9,10 +10,12 @@ models:
           - unique
       
       - name: location
+        description: "City where tournament held"
         tests: 
           - not_null
 
   - name: dim_surface
+    description: "Court surface types used in Djokovic titles dataset"
     columns: 
       - name: surface_key
         tests: 
@@ -20,10 +23,12 @@ models:
           - unique
 
       - name: Surface
+        description: "Type of tennis court surface (Clay, Grass, Hard or Indoor)"
         tests: 
           - not_null
 
   - name: dim_opponent
+    description: "dimension detailing the opponents faced in each tournament final in Djookovic titles dataset"
     columns: 
       - name: opponent_key
         tests:
@@ -31,10 +36,12 @@ models:
           - unique
 
       - name: Final_Opponent
+        description: "name of opponent faced in Final of tournament"
         tests: 
           - not_null
 
   - name: dim_atp_level
+    description: "dimension containing the tournament level types used in Djokovic titles dataset"
     columns: 
       - name: atp_level_key
         tests: 
@@ -42,10 +49,12 @@ models:
           - unique
 
       - name: atp_level_raw
+        description: "level of ATP tournament"
         tests:
           - not_null
 
   - name: dim_tournament
+    description: "dimension containing the names of all the tournaments used in Djokovic titles dataset"
     columns: 
       - name: tournament_key
         tests: 
@@ -53,6 +62,7 @@ models:
           - unique
 
       - name: Tournament
+        description: "names of each tournament appearing in Djokovic titles dataset"
         tests:
           - not_null
 
